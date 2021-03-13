@@ -114,7 +114,25 @@ function renderButtons() {
 
 function renderPrice() {
   // Iteration 4: change the HTML of `<aside class="panel price">`
+  let liList = document.querySelectorAll('.panel.price li');
+  for (let i = 0; i < liList.length; i++) {
+    if (state.pepperoni && i === 0) {
+      liList[i].style.textDecoration = 'none';
+    } else if (state.mushrooms && i === 1) {
+      liList[i].style.textDecoration = 'none';
+    } else if (state.greenPeppers && i === 2) {
+      liList[i].style.textDecoration = 'none';
+    } else if (state.whiteSauce && i === 3) {
+      liList[i].style.textDecoration = 'none';
+    } else if (state.glutenFreeCrust && i === 4) {
+      liList[i].style.textDecoration = 'none';
+    } else {
+      liList[i].style.textDecoration = 'line-through';
+    }
+  }
 }
+
+
 
 renderEverything();
 
